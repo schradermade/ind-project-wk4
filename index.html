@@ -8,24 +8,43 @@
   <title>Schrader's Wood-Fired Pizza</title>
 </head>
 <body>
-  <div class="container-fluid">
+  <div class="container">
     <div class="jumbotron">
-      <img id="pizzaPicture" src="img/pizzaPicture.jpg" alt="picture of a woodfired pizza">
       <h1>Schrader's Wood-Fired Pizza</h1>
+      <img id="pizzaPicture" src="img/pizzaPicture.jpg" alt="picture of a woodfired pizza">
+      
       <h2>Homemade pizza in an outdoor wood-fired oven</h2>
     </div>
+      <div class="form-group">
+        <form id="newOrder">
+          <div>
+            <p id="formIntro">Build your pizza here!</p>
+            <br>
+            <p id="formTitle">What's your name?</label>
+            <input type="text" id="name" class="form-control">
+            <br>
+            <p id="formTitle">What size pie would you like?</p>
+            <button type="button" class="btn btn-secondary btn-lg">Small Pie</button>
+            <button type="button" class="btn btn-secondary btn-lg">Medium Pie</button>
+            <button type="button" class="btn btn-secondary btn-lg">Large Pie</button>
+            <br><br>
+            <p id="formTitle">Toppings?</p>
+            <label for="cheese">Mozzerela Cheese</label>
+            <input type="checkbox" id="cheese" name="cheese" unchecked>
+            <br>
+            <label for="olives">Black Olives</label>
+            <input type="checkbox" id="olives" name="olives" unchecked>
+            <br>
+            <label for="pepperoni">Pepperoni</label>
+            <input type="checkbox" id="pepperoni" name="pepperoni" unchecked>
+            <br>
+            <label for="tomatos">Garden Tomatos</label>
+            <input type="checkbox" id="tomatos" name="tomatos" unchecked>
+          </div>
+          <button type="submit" id="makeIt" class="btn">Make my pie!</button>
+          <button type="submit" id="makeAnother" class="btn">Make another pie!</button>
+        </form>
+      </div>
   </div>
-  <div class="container">
-    <div class="form-group">
-      <form id="pizzaForm">
-        <p>Pizza Order Form</p>
-        <p>Build your pizza:</p>
-        <input style="text" id="name" class="form-control">
-        <br><br>
-        
-      </form>
-    </div>
-  </div>
-  
 </body>
 </html>

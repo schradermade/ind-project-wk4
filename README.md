@@ -31,6 +31,10 @@ _Create a website for a pizza company where a user can choose one or more indivi
 | will correctly build pizza with chosen toppings | cheese: true, olives: true | "cheese", "olives" |
 | will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
 
+| will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
+| will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
+| will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
+
 
 
 
