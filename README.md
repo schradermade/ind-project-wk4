@@ -1,24 +1,17 @@
-# _Mr. Roboger's Neighborhood_
+# _Pizza Shop_
 
-#### _Web form to transform user's inputted number, 10.30.2020_
+#### _Web form to process pizza orders for pizza shop, 11.6.2020_
 
 #### By _**Nathan Schrader**_
 
 ## Description
 
-_This web application will take a number from a user and return a range of numbers from 0 to the user inputted number with the following exceptions:_
-    *   Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"
-    *   Numbers that contain a 2: all digits are replaced (all digits) with "Boop!"
-    *   Numbers that contain a 3: all digits are replaced (all digits) with "Won't you be my neighbor?"
-    
-These exceptions are written from least to most important. The first exception should apply unless the second exception does, and the same with the second and third. So, for example:
-    *   The number 13 should be replaced with "Won't you be my neighbor?"
-    *   The number 21 should be replaced with "Boop"
-    *   The number 32 should be replaced with "Won't you be my neighbor?"
-    
-A user should be able to enter a new number and see new reults over and over again.
+_Create a website for a pizza company where a user can choose one or more individual toppings (cheese, pepperoni, artichoke, anchovy, etc) and a size to order a pizza and see the final cost._
 
-**Example:** if a user inputs a inputs a **5**, the program should display a list of values: **"0", "Beep!", "Boop", "Won't you be my neighbor?", 4, 5** 
+*   Allow the user to choose toppings and size for the pizza they'd like to order.
+*   Create a pizza object constructor with properties for toppings and size.
+*   Create a prototype method for the cost of a pizza depending on the selections chosen.
+    
 
 ## Setup/Installation Requirements
 
@@ -29,25 +22,16 @@ A user should be able to enter a new number and see new reults over and over aga
 
 ## Specs
 
-1.
-Describe: userInput
-Test: "Takes in user input, converts to integer and stores it in a variable"
-Expect(userInput("5")).toEqual([5])
+| Test | Input | Output |
+| :-- | :--| :-- |
+| will correctly create an instance of PizzaOrder | "Christian" | "Christian" |
+| will correctly select a pizza size for PizzaOrder | Large: true | "Large" |
+| will correctly add cheese to instance of PizzaOrder | true | "cheese" |
+| will correctly add pepperoni to instance of PizzaOrder | true | "pepperoni" |
+| will correctly build pizza with chosen toppings | cheese: true, olives: true | "cheese", "olives" |
+| will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
 
-2.
-Describe: createArray
-Test: "Creates an array of integers ranging from 0 to the user's inputed integer"
-Expect(createArray("5")).toEqual([0, 1, 2, 3, 4, 5]);
 
-3.
-Describe: createString
-Test: "Takes array of integers and converts them to an array of strings"
-Expect(createString([0, 1, 2, 3, 4, 5])).toEqual(["0", "1", "2", "3", "4", "5"])
-
-4.
-Describe: transformString
-Test: "Transforms string based on instructed logic given in Project guidelines"
-Expect(transformString(["0", "1", "2", "3", "4", "5"])).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor?", "4", "5"])
 
 
 ## Known Bugs
