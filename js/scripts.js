@@ -3,18 +3,35 @@
 //*********************************************************************//
 function PizzaOrder(guestName)  {
   this.guestName = guestName;
-  this.pizzaSize = size;
+  this.pizzaSize;
   this.cheese = cheese;
   this.pepperoni = pepperoni;
   this.olives = olives;
   this.tomatos = tomatos;
   this.totalToppings = [];
 }
+function myFunction (button) {
+  var x = button.id;
+  switch (x) {
+      case '1':
+          size = "Small";
+          break;
+      case '2':
+          size = "Medium"
+          break;
+      case '3':
+          size = "Large";
+          break;
+      default:
+          return false;
+  }
+};
 //*********************************************************************//
                       // Prototypes //
 //*********************************************************************//
 PizzaOrder.prototype.addSize = function(size) {
   this.size += size;
+  console.log(size)
 }
 
 PizzaOrder.prototype.addCheese = function(cheese) {
@@ -73,7 +90,22 @@ $(document).ready(function(event)  {
 
   $("#newPizza").submit(function(event) {
     event.preventDefault();
-    let size = $("#size").val();
+    let sized = function myFunction (button) {
+      var x = button.id;
+      switch (x) {
+          case '1':
+              sized = "small";
+              break;
+          case '2':
+              sized = "medium";
+              break;
+          case '3':
+              sized = "large";
+              break;
+          default:
+              return false;
+      }
+    };
     let cheese = $("#cheese").val();
     let pepperoni = $("#pepperoni").val();
     let olives = $("#olives").val();
