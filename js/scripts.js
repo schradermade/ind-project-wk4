@@ -1,13 +1,13 @@
 //*********************************************************************//
     // Business Logic //
 //*********************************************************************//
-function PizzaOrder(guestName, size)  {
-  this.guestName = name;
+function PizzaOrder(guestName)  {
+  this.guestName = guestName;
   this.pizzaSize = size;
-  this.cheese = "cheese";
-  this.pepperoni = "pepperoni";
-  this.olives = "olives";
-  this.tomatos = "tomatos";
+  this.cheese = cheese;
+  this.pepperoni = pepperoni;
+  this.olives = olives;
+  this.tomatos = tomatos;
   this.totalToppings = [];
 }
 //*********************************************************************//
@@ -39,14 +39,16 @@ PizzaOrder.prototype.buildPizza = function()  {
 
 PizzaOrder.prototype.anotherPizza = function()  {
   this.totalToppings = [];
+  this.cheese = 0;
 }
 
 //*********************************************************************//
 // User Interface //
 //*********************************************************************//
-$(document).ready(function()  {
+$(document).ready(function(event)  {
+  
   let pizzaOrder;
-  let newPizza = new PizzaOrder("guestName");
+  let newPizza = new PizzaOrder(guestName);
   newPizza.addCheese();
   newPizza.addOlives();
   newPizza.addPepperoni();
@@ -58,15 +60,18 @@ $(document).ready(function()  {
 
   $("#newOrder").submit(function(event) {
     event.preventDefault();
-    let guestName = $("#name").val();
+    $("#newPizza").show();
+    let guestName = $("#guestName").val();
     pizzaOrder = new PizzaOrder(guestName);
+    console.log(guestName);
+    console.log(pizzaOrder);
   });
 
     //*********************************************************************//
     // "BUILD IT" - Customer can build their pie //
     //*********************************************************************//
 
-  $("orderForm").submit(function(event) {
+  $("#newPizza").submit(function(event) {
     event.preventDefault();
     let size = $("#size").val();
     let cheese = $("#cheese").val();
@@ -78,23 +83,27 @@ $(document).ready(function()  {
     pizzaOrder.addPepperoni(pepperoni);
     pizzaOrder.addOlives(olives);
     pizzaOrder.addTomatos(tomatos);
+    console.log(size);
   });
 
     //*********************************************************************//
     // "MAKE IT" - Customer can see summary of their pizza order //
     //*********************************************************************//
 
-  $("#buildButton").click(function()  {
+  $("#makeIt").submit(function(event)  {
+    event.preventDefault();
     let finalPizza = pizzaOrder.buildPizza();
     $("#completePizza").text(finalPizza);
+    console.log(finalPizza);
   });
 
     //*********************************************************************//
     // "MAKE ANOTHER!" //
     //*********************************************************************//
 
-  $("#clearBuildButton").click(function() {
-    pizzaOrder.anotherPizza();
+  $("#makeAnother").submit(function(event) {
+    event.preventDefault();
+    newPizza.anotherPizza();
     $("#completePizza").text([])
   });
 });

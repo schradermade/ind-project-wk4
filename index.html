@@ -16,33 +16,43 @@
       <h2>Homemade pizza in an outdoor wood-fired oven</h2>
     </div>
       <div class="form-group">
+        
         <form id="newOrder">
-          <div>
-            <p id="formIntro">Build your pizza here!</p>
-            <br>
-            <p id="formTitle">What's your name?</label>
-            <input type="text" id="name" class="form-control">
-            <br>
-            <p id="formTitle">What size pie would you like?</p>
-            <button type="button" class="btn btn-secondary btn-lg">Small Pie</button>
-            <button type="button" class="btn btn-secondary btn-lg">Medium Pie</button>
-            <button type="button" class="btn btn-secondary btn-lg">Large Pie</button>
-            <br><br>
-            <p id="formTitle">Toppings?</p>
-            <label for="cheese">Mozzerela Cheese</label>
-            <input type="checkbox" id="cheese" name="cheese" unchecked>
-            <br>
-            <label for="olives">Black Olives</label>
-            <input type="checkbox" id="olives" name="olives" unchecked>
-            <br>
-            <label for="pepperoni">Pepperoni</label>
-            <input type="checkbox" id="pepperoni" name="pepperoni" unchecked>
-            <br>
-            <label for="tomatos">Garden Tomatos</label>
-            <input type="checkbox" id="tomatos" name="tomatos" unchecked>
-          </div>
+          <p id="formIntro">Build your pizza here!</p>
+          <br>
+          <p id="formTitle">What's your name?</label>
+          <input type="text" id="guestName" class="form-control" value="Enter name here">
+          <br>
+          <button type="submit" id="inputName" class="btn btn-primary btn-lg">Build Pie!</button>
+          
+          <br>
+        </form>
+
+        <form id="newPizza">
+          <p id="formTitle">What size pie would you like?</p>
+          
+            <button type="button" id="size" value="guess" class="btn btn-secondary btn-lg">Small Pie</button>
+            <button type="button" id="size" value="guess3" class="btn btn-secondary btn-lg">Medium Pie</button>
+            <button type="button" id="size" value="guess4" class="btn btn-secondary btn-lg">Large Pie</button>
+
+          <br><br>
+          <p id="formTitle">Toppings?</p>
+          <label for="cheese">Mozzerela Cheese</label>
+          <input type="checkbox" id="cheese" name="cheese" unchecked>
+          <br>
+          <label for="olives">Black Olives</label>
+          <input type="checkbox" id="olives" name="olives" unchecked>
+          <br>
+          <label for="pepperoni">Pepperoni</label>
+          <input type="checkbox" id="pepperoni" name="pepperoni" unchecked>
+          <br>
+          <label for="tomatos">Garden Tomatos</label>
+          <input type="checkbox" id="tomatos" name="tomatos" unchecked>
+        
           <button type="submit" id="makeIt" class="btn">Make my pie!</button>
-          <button type="submit" id="makeAnother" class="btn">Make another pie!</button>
+        <form id="makeAnother">
+          <button type="submit" class="btn">Make another pie!</button>
+        </form>
         </form>
       </div>
   </div>
