@@ -10,3 +10,8 @@
 #formIntro  {
   font-size: 50px;
 }
+
+
+#newPizza  {
+  display: none;
+}
