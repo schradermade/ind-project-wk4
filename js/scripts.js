@@ -1,6 +1,7 @@
 // Business Logic
 
-function Pizza( guestName )  {
+function Pizza( guestName, toppings, size)  {
   this.guestName = guestName,
-
+  this.toppings = toppings;
+  this.size = size;
 }

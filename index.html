@@ -9,54 +9,41 @@
 </head>
 <body>
   <div class="container">
-    <div class="jumbotron">
-      <h1>Schrader's Wood-Fired Pizza</h1>
-      <img id="pizzaPicture" src="img/pizzaPicture.jpg" alt="picture of a woodfired pizza">
-      
-      <h2>Homemade pizza in an outdoor wood-fired oven</h2>
-    </div>
+    <h1>Schrader's Pizza Shop</h1>
+    <form id="formOne">
       <div class="form-group">
-        
-        <form id="newOrder">
-          <p id="formIntro">Build your pizza here!</p>
-          <br>
-          <p id="formTitle">What's your name?</label>
-          <input type="text" id="guestName" class="form-control" value="Enter name here">
-          <br>
-          <button type="submit" id="inputName" class="btn btn-primary btn-lg">Build Pie!</button>
-          
-          <br>
-        </form>
 
-        <form id="newPizza">
-          <p id="formTitle">What size pie would you like?</p>
-          
-            <button type="button" onclick="myFunction(this)" id="1" value="guess" class="btn btn-secondary btn-lg">Small Pie</button>
-            <button type="button" onclick="myFunction(this)" id="2" value="guess3" class="btn btn-secondary btn-lg">Medium Pie</button>
-            <button type="button" onclick="myFunction(this)" id="3" value="guess4" class="btn btn-secondary btn-lg">Large Pie</button>
+        <label for="customer-name">Guest Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="customer-name"
+          placeholder="Enter Name Here"
+        />
 
-          <br><br>
-      
-          
-          <p id="formTitle">Toppings?</p>
-          <label for="cheese">Mozzerela Cheese</label>
-          <input type="checkbox" id="cheese" name="cheese" unchecked>
-          <br>
-          <label for="olives">Black Olives</label>
-          <input type="checkbox" id="olives" name="olives" unchecked>
-          <br>
-          <label for="pepperoni">Pepperoni</label>
-          <input type="checkbox" id="pepperoni" name="pepperoni" unchecked>
-          <br>
-          <label for="tomatos">Garden Tomatos</label>
-          <input type="checkbox" id="tomatos" name="tomatos" unchecked>
-        
-          <button type="submit" id="makeIt" class="btn">Make my pie!</button>
-        <form id="makeAnother">
-          <button type="submit" class="btn">Make another pie!</button>
-        </form>
-        </form>
       </div>
+      <div class="form-group">
+        <div class="form-group">
+
+          <p>Toppings</p>
+            <label for="pepperoni">Pepperoni</label>
+            <input type="text" id="pepperoni" name="pepperoni" value="pepperoni">
+            <label for="cheese">Cheese</label>
+            <input type="text" id="Cheese" name="cheese" value="cheese">
+
+        </div>
+      </div>
+      <div class="form-group">
+        <p>Pizza Size</p>
+        <select id="size">
+          <option value="1">Medium</option>
+          <option value="2">Large</option>
+        </select>
+
+      </div>
+      <button type="submit" class="btn-primary">Make my pizza!</button>
+    </form>
+    <div id="results"></div>
   </div>
 </body>
 </html>
