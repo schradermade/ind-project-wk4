@@ -8,22 +8,20 @@ function Pizza( guestName, toppings, size)  {
 
 Pizza.prototype.calcPrice = function()  {
   let cost = 0;
-  if ( this.size === 'medium')  {
+  if ( this.size === 'Medium')  {
     cost += 10;
-  }
-  if ( this.size === "large") {
+  } else {
     cost += 15;
   }
   alert(cost);
+  return cost;
 };
+  
 
 $(document).ready(function() {
   $("#formOne").submit(function(event)  {
     event.preventDefault();
-
-    let pizzaOrder = new Pizza(guestName, toppings, size);
-    let pizzaPrice = pizzaOrder.calcPrice();
-    alert(pizzaPrice);
+    
     let guestName = $("#guest-name").val();
     alert(guestName);
     let cheese = $("#cheese").val();
@@ -34,8 +32,8 @@ $(document).ready(function() {
     alert(toppings);
     let size = $("#size").val();
     alert(size);
-    
+    let pizzaOrder = new Pizza(guestName, toppings, size);
+    let pizzaPrice = pizzaOrder.calcPrice();
+    $("#results").empty().append(guestName + ", your " + size + " pizza will be $" + pizzaPrice + ". Enjoy!");
   })
-
-  $("#results").empty().append(guestName + ", your" + size + "pizza will be $" + pizzaPrice );
 });
