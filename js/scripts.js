@@ -7,13 +7,19 @@ function Pizza( guestName, toppings, size)  {
 }
 
 Pizza.prototype.calcPrice = function()  {
-  alert("this is a test");
+
 }
 
 $(document).ready(function() {
   $("#formOne").submit(function(event)  {
     event.preventDefault();
 
-    
+    let guestName = $("#guest-name").val();
+    alert(guestName);
+    let toppings;
+    let cheese = $("#cheese").val();
+    alert(cheese);
+    let pepperoni = $("#pepperoni").val();
+    alert(pepperoni);
   })
 });
