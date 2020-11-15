@@ -11,32 +11,23 @@ _Create a website for a pizza company where a user can choose one or more indivi
 *   Allow the user to choose toppings and size for the pizza they'd like to order.
 *   Create a pizza object constructor with properties for toppings and size.
 *   Create a prototype method for the cost of a pizza depending on the selections chosen.
-    
 
 ## Setup/Installation Requirements
 
-* _Clone this repository_
-* _Open a simple HTTP server in the top level of the cloned directory. For a mac, run the following commanad in your terminal:_
+* Clone this repository
+* Open a simple HTTP server in the top level of the cloned directory. For a mac, run the following commanad in your terminal:
     `python -m SimpleHTTPServer`
-* _Then open your web browser of choice to localhost:8800_
+* Then open your web browser of choice to localhost:8800
 
 ## Specs
 
 | Test | Input | Output |
 | :-- | :--| :-- |
-| will correctly create an instance of PizzaOrder | "Christian" | "Christian" |
-| will correctly select a pizza size for PizzaOrder | Large: true | "Large" |
-| will correctly add cheese to instance of PizzaOrder | true | "cheese" |
-| will correctly add pepperoni to instance of PizzaOrder | true | "pepperoni" |
-| will correctly build pizza with chosen toppings | cheese: true, olives: true | "cheese", "olives" |
-| will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
-
-| will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
-| will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
-| will correctly reset PizzaOrder "Build It" form | cheese: true, olives: true | 0 |
-
-
-
+| will correctly create an instance of Pizza | "let pizzaOrder = new Pizza("Nate", "cheese", "Medium") | "Pizza {guestName: "Nate", toppings: Array(2), size: "Medium"}" |
+| will correctly create an instance of Pizza with pepperoni | "let pizzaOrder = new Pizza("Nate", "pepperoni", "Medium") | "Pizza {guestName: "Nate", toppings: Array(2), size: "Medium"}" |
+| will correctly create an instance of Pizza with cheese | "let pizzaOrder = new Pizza("Nate", "cheese", "Large") | "Pizza {guestName: "Nate", toppings: Array(2), size: "Large"}" |
+| will correctly create an instance of Pizza for Large pizza with correct pricing | pizzaOrder.calcPrice(); | "15" |
+| will correctly create an instance of Pizza for Medium pizza with correct pricing | pizzaOrder.calcPrice(); | "10" |
 
 ## Known Bugs
 
@@ -48,13 +39,13 @@ _If you run into any issues or have concerns, please reach out at **nathanschrad
 
 ## Technologies Used
 
-**HTML
-CSS
-Bootstrap
-JavaScript
-jQuery
-Visual Studio Code
-Github**
+HTML
+* CSS
+* Bootstrap
+* JavaScript
+* jQuery
+* Visual Studio Code
+* Github
 
 ## Legal
 

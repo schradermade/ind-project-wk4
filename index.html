@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/styles.css" rel="stylesheet" type="text/css">
-  <script src="js/jquery-3.5.1.js"></script>
-  <script src="js/scripts.js"></script>
-  <title>Schrader's Wood-Fired Pizza</title>
-</head>
-<body>
-  <div class="container">
-    <h1>Schrader's Pizza Shop</h1>
-    <form id="formOne">
-      <div class="form-group">
-
-        <label for="customer-name">Guest Name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="customer-name"
-          placeholder="Enter Name Here"
-        />
-
-      </div>
-      <div class="form-group">
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Schrader's Wood-Fired Pizza</title>
+  </head>
+  <body>x
+    <div class="container">
+      <h1>Schrader's Pizza Shop</h1>
+      <form id="formOne">
         <div class="form-group">
-
-          <p>Toppings</p>
-            <label for="pepperoni">Pepperoni</label>
-            <input type="text" id="pepperoni" name="pepperoni" value="pepperoni">
-            <label for="cheese">Cheese</label>
-            <input type="text" id="Cheese" name="cheese" value="cheese">
-
+          <label for="guest-name">Guest Name</label>
+          <input type="text" class="form-control" id="guest-name" placeholder="Enter Name Here"/>
         </div>
-      </div>
-      <div class="form-group">
-        <p>Pizza Size</p>
-        <select id="size">
-          <option value="1">Medium</option>
-          <option value="2">Large</option>
-        </select>
-
-      </div>
-      <button type="submit" class="btn-primary">Make my pizza!</button>
-    </form>
-    <div id="results"></div>
-  </div>
-</body>
+        <div class="form-group">
+          <p>Cheese</p>
+          <select id="cheese">
+            <option value="">None</option>
+            <option value="cheese">Cheese</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p>Pepperoni</p>
+          <select id="pepperoni">
+            <option value="">None</option>
+            <option value="pepperoni">Pepperoni</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p>Pizza Size</p>
+          <select id="size">
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary">Make my pizza!</button>
+      </form>
+      <br />
+      <div id="results"></div>
+      <br />
+    </div>
+  </body>
 </html>
