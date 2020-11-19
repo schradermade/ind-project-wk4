@@ -8,7 +8,7 @@ function Pizza(inputName)  {
 }
 
 Pizza.prototype.addSize = function(pizzaSize) {
-  return this.size = pizzaSize;
+  this.size = pizzaSize;
 };
 
 Pizza.prototype.addToppings = function(cheese, pepperoni) {
@@ -22,7 +22,6 @@ Pizza.prototype.addToppings = function(cheese, pepperoni) {
     this.toppingsCount += 1;
     this.price += 2.00;
   }
-  return this.toppingsCount;
 };
 
 Pizza.prototype.addPrice = function()  {
@@ -32,7 +31,6 @@ Pizza.prototype.addPrice = function()  {
   if (this.size === "Large")  {
     this.price += 15;
   }
-  return this.price;
 };
 
 // User Logic
