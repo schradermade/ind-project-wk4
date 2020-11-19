@@ -1,18 +1,39 @@
 // Business Logic
-function Pizza( guestName, toppings, size)  {
-  this.guestName = guestName;
-  this.toppings = toppings;
-  this.size = size;
+function Pizza(inputName)  {
+  this.guestName = inputName;
+  this.toppings = [];
+  this.toppingsCount = 0;
+  this.size = "";
+  this.price = 0;
 }
 
-Pizza.prototype.calcPrice = function()  {
-  let cost = 0;
-  if ( this.size === 'Medium')  {
-    cost += 10;
-  } else {
-    cost += 15;
+Pizza.prototype.addSize = function(pizzaSize) {
+  return this.size = pizzaSize;
+};
+
+Pizza.prototype.addToppings = function(cheese, pepperoni) {
+  if (cheese === "cheese")  {
+    this.toppings.push(cheese);
+    this.toppingsCount += 1;
   }
-  return cost;
+  if (pepperoni === "pepperoni")  {
+    this.toppings.push(pepperoni);
+    this.toppingsCount += 1;
+  }
+  return this.toppingsCount;
+};
+
+Pizza.prototype.addPrice = function()  {
+  if (this.size === "Medium") {
+    this.price += 10;
+  }
+  if (this.size === "Large")  {
+    this.price += 15;
+  }
+  if (this.toppingsCount)  {
+    this.price += this.toppingsCount * 1.50;
+  }
+  return this.price;
 };
 
 // User Logic
@@ -20,13 +41,15 @@ $(document).ready(function() {
   $("#formOne").submit(function(event)  {
     event.preventDefault();
     
-    let guestName = $("#guest-name").val();
+    let inputName = $("#guest-name").val();
     let cheese = $("#cheese").val();
     let pepperoni = $("#pepperoni").val();
-    let toppings = [pepperoni, cheese];
-    let size = $("#size").val();
-    let pizzaOrder = new Pizza(guestName, toppings, size);
-    let pizzaPrice = pizzaOrder.calcPrice();
-    $("#results").empty().append(guestName + ", your " + size + " pizza will be $" + pizzaPrice + ". Enjoy!");
+    let pizzaSize = $("#size").val();
+    let pizzaOrder = new Pizza(inputName);
+    pizzaOrder.addSize(pizzaSize);
+    pizzaOrder.addPrice();
+    pizzaOrder.addToppings(cheese, pepperoni);
+    console.log(pizzaOrder);
+    $("#results").empty().append(pizzaOrder.guestName + ", your " + pizzaOrder.size + " pizza will be $" + pizzaOrder.price + ". Enjoy!");
   })
 });
