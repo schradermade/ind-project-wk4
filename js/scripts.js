@@ -15,10 +15,12 @@ Pizza.prototype.addToppings = function(cheese, pepperoni) {
   if (cheese === "cheese")  {
     this.toppings.push(cheese);
     this.toppingsCount += 1;
+    this.price += 1.50;
   }
   if (pepperoni === "pepperoni")  {
     this.toppings.push(pepperoni);
     this.toppingsCount += 1;
+    this.price += 2.00;
   }
   return this.toppingsCount;
 };
@@ -30,9 +32,6 @@ Pizza.prototype.addPrice = function()  {
   if (this.size === "Large")  {
     this.price += 15;
   }
-  if (this.toppingsCount)  {
-    this.price += this.toppingsCount * 1.50;
-  }
   return this.price;
 };
 
@@ -40,7 +39,6 @@ Pizza.prototype.addPrice = function()  {
 $(document).ready(function() {
   $("#formOne").submit(function(event)  {
     event.preventDefault();
-    
     let inputName = $("#guest-name").val();
     let cheese = $("#cheese").val();
     let pepperoni = $("#pepperoni").val();
@@ -49,7 +47,6 @@ $(document).ready(function() {
     pizzaOrder.addSize(pizzaSize);
     pizzaOrder.addPrice();
     pizzaOrder.addToppings(cheese, pepperoni);
-    console.log(pizzaOrder);
     $("#results").empty().append(pizzaOrder.guestName + ", your " + pizzaOrder.size + " pizza will be $" + pizzaOrder.price + ". Enjoy!");
   })
 });
